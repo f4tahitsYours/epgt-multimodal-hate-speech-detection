@@ -1,0 +1,66 @@
+# ============================================================
+# EPGT — .gitignore
+# ============================================================
+
+# ----- Dataset & Annotations (too large / sensitive) --------
+data/raw/
+data/annotated/
+data/processed/
+data/features/
+*.csv
+*.jsonl
+
+# ----- Model Checkpoints (too large) ------------------------
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+
+# ----- Serialized Objects -----------------------------------
+*.pkl
+*.pickle
+
+# ----- Python Cache -----------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.pytest_cache/
+
+# ----- Jupyter / Colab --------------------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# ----- Virtual Environments ---------------------------------
+.env
+.venv
+env/
+venv/
+ENV/
+
+# ----- IDE & OS ---------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ----- Logs & Temp ------------------------------------------
+*.log
+*.tmp
+outputs/tables/
+wandb/
+
+# ----- API Keys & Secrets -----------------------------------
+.env
+secrets.json
+credentials.json
+config_private.py
+
+# ---- Keep these outputs (figures only) ---------------------
+!outputs/figures/*.png
+!outputs/figures/*.jpg

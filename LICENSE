@@ -1,0 +1,88 @@
+Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License
+
+Copyright (c) 2025 Fatahillah. All rights reserved.
+
+This work — including all source code, notebooks, model architecture,
+research pipeline, documentation, and associated materials in this
+repository — is the intellectual property of Fatahillah and is licensed
+under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
+International License (CC BY-NC-ND 4.0).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+YOU ARE PERMITTED TO:
+
+  ✔  View and read this work for personal or academic reference
+  ✔  Share — copy and redistribute the material in any medium or format
+  ✔  Cite this work in academic publications with proper attribution
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+YOU ARE STRICTLY PROHIBITED FROM:
+
+  ✘  Commercial Use — You may not use this work, in whole or in part,
+     for commercial purposes, monetary gain, or any activity that
+     generates revenue without explicit written permission from the
+     original author.
+
+  ✘  Derivatives — You may not remix, transform, adapt, modify,
+     translate, or build upon this work in any form. Creating derivative
+     works, modified versions, or works substantially based on this
+     research is strictly prohibited without prior written consent.
+
+  ✘  Plagiarism — You may not present this work, its methodology,
+     architecture, pipeline, or any substantial portion thereof as your
+     own original work. This includes academic submissions, theses,
+     dissertations, technical reports, blog posts, and presentations.
+
+  ✘  Redistribution without attribution — You may not share or
+     redistribute this work without clearly crediting the original
+     author as specified in the Attribution Requirements below.
+
+  ✘  Sublicensing — You may not sublicense, sell, or transfer any
+     rights granted under this license to any third party.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ATTRIBUTION REQUIREMENTS:
+
+Any permitted use of this work must include all of the following:
+
+  1. Author name   : Fatahillah
+  2. Project title : EPGT: Emoji Pragmatic Graph Transformer for
+                     Multimodal Hate Speech Detection
+  3. Year          : 2025
+  4. Source        : https://github.com/f4tahitsYours/epgt-multimodal-hate-speech-detection
+  5. License       : CC BY-NC-ND 4.0
+
+Suggested citation format:
+  Fatahillah. (2025). EPGT: Emoji Pragmatic Graph Transformer for
+  Multimodal Hate Speech Detection. GitHub Repository.
+  https://github.com/f4tahitsYours/epgt-multimodal-hate-speech-detection
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+NO WARRANTIES:
+
+This work is provided "as is", without warranty of any kind, express
+or implied. The author shall not be liable for any claim, damages, or
+other liability arising from the use or inability to use this work.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+VIOLATIONS:
+
+Any use of this work that violates the terms above constitutes
+copyright infringement and may be subject to legal action under
+applicable intellectual property laws.
+
+To request special permissions beyond this license, contact the
+author directly.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Full legal text of CC BY-NC-ND 4.0:
+https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+
+Human-readable summary:
+https://creativecommons.org/licenses/by-nc-nd/4.0/
