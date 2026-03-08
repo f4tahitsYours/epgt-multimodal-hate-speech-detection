@@ -88,7 +88,7 @@ L_total = 0.40 · L_intensity + 0.35 · L_sarcasm + 0.25 · L_role
 
 ---
 
-## 🏗️ Architecture
+### 🏗️ Architecture
 
 ```mermaid
 flowchart TD
