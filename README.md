@@ -90,41 +90,40 @@ L_total = 0.40 · L_intensity + 0.35 · L_sarcasm + 0.25 · L_role
 
 ## 🏗️ Architecture
 
-```
-Input Text + Emoji Sequence
-         │
-         ├──────────────────────────┐
-         ▼                          ▼
- ┌───────────────┐        ┌──────────────────┐
- │   IndoBERT    │        │  Emoji Graph     │
- │  Text Encoder │        │  Construction    │
- │  (CLS token)  │        │  G = (V, E, W)   │
- └───────┬───────┘        └────────┬─────────┘
-         │                         │
-         │  text_emb ∈ ℝ⁷⁶⁸       │
-         │                         ▼
-         │               ┌──────────────────┐
-         │               │  2-layer GAT     │
-         │               │  (4 heads)       │
-         │               │  + Mean Pooling  │
-         │               └────────┬─────────┘
-         │                        │
-         │               graph_emb ∈ ℝ²⁵⁶
-         │                        │
-         └──────────┬─────────────┘
-                    ▼
-          ┌──────────────────┐
-          │  Cross-Attention │
-          │  Fusion Layer    │
-          │  (Q=text, KV=graph)
-          └────────┬─────────┘
-                   │
-          combined_repr ∈ ℝ⁷⁶⁸
-                   │
-         ┌─────────┼─────────┐
-         ▼         ▼         ▼
-    [Intensity] [Sarcasm] [Role]
-    Head A      Head B    Head C
+```mermaid
+flowchart TD
+    INPUT["📥 **Input**\nText + Emoji Sequence"]
+
+    INPUT -->|split| BERT
+    INPUT -->|split| GRAPH
+
+    BERT["🧠 **IndoBERT**\nText Encoder\n─────────────\nCLS Token"]
+    GRAPH["🕸️ **Emoji Graph**\nConstruction\n─────────────\nG = (V, E, W)"]
+
+    BERT -->|"text_emb ∈ ℝ⁷⁶⁸"| FUSION
+    GRAPH --> GAT
+
+    GAT["⚡ **2-Layer GAT**\n4 Attention Heads\n─────────────\n+ Mean Pooling"]
+    GAT -->|"graph_emb ∈ ℝ²⁵⁶"| FUSION
+
+    FUSION["🔀 **Cross-Attention Fusion Layer**\nQ = text_emb · KV = graph_emb\n─────────────\ncombined_repr ∈ ℝ⁷⁶⁸"]
+
+    FUSION --> HA
+    FUSION --> HB
+    FUSION --> HC
+
+    HA["🔥 **Head A**\nEmotion Intensity\nLow / Medium / High"]
+    HB["😏 **Head B**\nSarcasm Detection\nNon-Sarcastic / Sarcastic"]
+    HC["🎭 **Head C**\nEmoji Pragmatic Role\nLiteral / Exaggeration / Irony / Reaction"]
+
+    style INPUT fill:#0d1b3e,stroke:#4fc3f7,color:#e1f5fe
+    style BERT fill:#050d1f,stroke:#4fc3f7,color:#e1f5fe
+    style GRAPH fill:#0d0520,stroke:#7c4dff,color:#ede7f6
+    style GAT fill:#031a1a,stroke:#26c6da,color:#e0f7fa
+    style FUSION fill:#120520,stroke:#ab47bc,color:#f3e5f5
+    style HA fill:#1a0a2e,stroke:#f06292,color:#f8bbd0
+    style HB fill:#0a1a2e,stroke:#4fc3f7,color:#b3e5fc
+    style HC fill:#0d1a0a,stroke:#81c784,color:#c8e6c9
 ```
 
 > 📊 Full architecture diagram: `outputs/figures/model_architecture.png`
