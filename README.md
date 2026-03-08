@@ -1,4 +1,5 @@
 # Modeling Emoji as Pragmatic Signals in Social Media Text Using a Hybrid Transformer–Graph Neural Network Architecture
+
 ## EPGT: Emoji-aware Graph Neural Network + Transformer for Hate Speech Detection
 
 <p align="center">
@@ -7,6 +8,7 @@
   <img src="https://img.shields.io/badge/PyTorch-2.0%2B-EE4C2C?style=for-the-badge&logo=pytorch" />
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
 </p>
+
 ---
 
 ## 📌 Project Overview
