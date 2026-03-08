@@ -92,29 +92,29 @@ L_total = 0.40 · L_intensity + 0.35 · L_sarcasm + 0.25 · L_role
 
 ```mermaid
 flowchart TD
-    INPUT["📥 **Input**\nText + Emoji Sequence"]
+    INPUT["📥 Input<br/>Text + Emoji Sequence"]
 
     INPUT -->|split| BERT
     INPUT -->|split| GRAPH
 
-    BERT["🧠 **IndoBERT**\nText Encoder\n─────────────\nCLS Token"]
-    GRAPH["🕸️ **Emoji Graph**\nConstruction\n─────────────\nG = (V, E, W)"]
+    BERT["🧠 IndoBERT<br/>Text Encoder<br/><i>CLS Token</i>"]
+    GRAPH["🕸️ Emoji Graph Construction<br/><i>G = (V, E, W)</i>"]
 
     BERT -->|"text_emb ∈ ℝ⁷⁶⁸"| FUSION
     GRAPH --> GAT
 
-    GAT["⚡ **2-Layer GAT**\n4 Attention Heads\n─────────────\n+ Mean Pooling"]
+    GAT["⚡ 2-Layer GAT<br/>4 Attention Heads<br/><i>+ Mean Pooling</i>"]
     GAT -->|"graph_emb ∈ ℝ²⁵⁶"| FUSION
 
-    FUSION["🔀 **Cross-Attention Fusion Layer**\nQ = text_emb · KV = graph_emb\n─────────────\ncombined_repr ∈ ℝ⁷⁶⁸"]
+    FUSION["🔀 Cross-Attention Fusion Layer<br/>Q = text_emb · KV = graph_emb<br/><i>combined_repr ∈ ℝ⁷⁶⁸</i>"]
 
     FUSION --> HA
     FUSION --> HB
     FUSION --> HC
 
-    HA["🔥 **Head A**\nEmotion Intensity\nLow / Medium / High"]
-    HB["😏 **Head B**\nSarcasm Detection\nNon-Sarcastic / Sarcastic"]
-    HC["🎭 **Head C**\nEmoji Pragmatic Role\nLiteral / Exaggeration / Irony / Reaction"]
+    HA["🔥 Head A<br/>Emotion Intensity<br/><i>Low / Medium / High</i>"]
+    HB["😏 Head B<br/>Sarcasm Detection<br/><i>Non-Sarcastic / Sarcastic</i>"]
+    HC["🎭 Head C<br/>Emoji Pragmatic Role<br/><i>Literal / Exaggeration / Irony / Reaction</i>"]
 
     style INPUT fill:#0d1b3e,stroke:#4fc3f7,color:#e1f5fe
     style BERT fill:#050d1f,stroke:#4fc3f7,color:#e1f5fe
@@ -348,7 +348,7 @@ NB01 → NB02 → NB03 → NB04 → NB05 → NB06
 
 ## 📄 License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the CC BY-NC-ND — see the [LICENSE](LICENSE) file for details.
 
 ---
 
