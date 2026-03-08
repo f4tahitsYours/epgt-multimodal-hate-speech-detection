@@ -7,12 +7,6 @@
   <img src="https://img.shields.io/badge/PyTorch-2.0%2B-EE4C2C?style=for-the-badge&logo=pytorch" />
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
 </p>
-
-<p align="center">
-  <b>Modeling Emoji as Pragmatic Signals in Social Media Text<br>
-  Using a Hybrid Transformer–Graph Neural Network Architecture</b>
-</p>
-
 ---
 
 ## 📌 Project Overview
