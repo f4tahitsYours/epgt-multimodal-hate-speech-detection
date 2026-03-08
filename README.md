@@ -94,23 +94,23 @@ L_total = 0.40 · L_intensity + 0.35 · L_sarcasm + 0.25 · L_role
 flowchart TD
     INPUT["📥 Input<br/>Text + Emoji Sequence"]
 
-    INPUT -->|split| BERT
-    INPUT -->|split| GRAPH
+    INPUT --> BERT
+    INPUT --> GRAPH
 
-    BERT["🧠 IndoBERT<br/>Text Encoder<br/><i>CLS Token</i>"]
-    GRAPH["🕸️ Emoji Graph Construction<br/><i>G = (V, E, W)</i>"]
+    subgraph ENCODERS[ ]
+        direction LR
+        BERT["🧠 IndoBERT<br/>Text Encoder<br/><i>CLS Token</i>"]
+        GRAPH["🕸️ Emoji Graph Construction<br/><i>G = (V, E, W)</i>"]
+    end
+
+    GRAPH --> GAT["⚡ 2-Layer GAT<br/>4 Attention Heads<br/><i>+ Mean Pooling</i>"]
 
     BERT -->|"text_emb ∈ ℝ⁷⁶⁸"| FUSION
-    GRAPH --> GAT
-
-    GAT["⚡ 2-Layer GAT<br/>4 Attention Heads<br/><i>+ Mean Pooling</i>"]
     GAT -->|"graph_emb ∈ ℝ²⁵⁶"| FUSION
 
     FUSION["🔀 Cross-Attention Fusion Layer<br/>Q = text_emb · KV = graph_emb<br/><i>combined_repr ∈ ℝ⁷⁶⁸</i>"]
 
-    FUSION --> HA
-    FUSION --> HB
-    FUSION --> HC
+    FUSION --> HA & HB & HC
 
     HA["🔥 Head A<br/>Emotion Intensity<br/><i>Low / Medium / High</i>"]
     HB["😏 Head B<br/>Sarcasm Detection<br/><i>Non-Sarcastic / Sarcastic</i>"]
@@ -124,6 +124,7 @@ flowchart TD
     style HA fill:#1a0a2e,stroke:#f06292,color:#f8bbd0
     style HB fill:#0a1a2e,stroke:#4fc3f7,color:#b3e5fc
     style HC fill:#0d1a0a,stroke:#81c784,color:#c8e6c9
+    style ENCODERS fill:transparent,stroke:#ffffff22
 ```
 
 > 📊 Full architecture diagram: `outputs/figures/model_architecture.png`
